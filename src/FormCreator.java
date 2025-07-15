@@ -17,7 +17,13 @@ public class FormCreator {
             bw.newLine();
             bw.write("3 - Qual o sexo do animal?");
             bw.newLine();
-            bw.write("4 - Qual endereço e bairro que ele foi encontrado?");
+            bw.write("4 - Qual o endereço em que ele foi encontrado?");
+            bw.newLine();
+            bw.write("4.1 - Número:");
+            bw.newLine();
+            bw.write("4.2 - Cidade:");
+            bw.newLine();
+            bw.write("4.3- Rua:");
             bw.newLine();
             bw.write("5 - Qual a idade aproximada do pet?");
             bw.newLine();
