@@ -3,8 +3,9 @@ import java.util.Scanner;
 import Exception.*;
 
 public class PetCreator {
-    public void petCreate(Pet pet) {
-        File formFile = new File("C:\\Users\\iamsm\\IdeaProjects\\SistemaCadastros\\docs\\formulario.txt");
+    public Pet petCreate() {
+        Pet pet = new Pet();
+        File formFile = new File("docs\\formulario.txt");
         Scanner sc = new Scanner(System.in);
         try {
             FileReader fr = new FileReader(formFile);
@@ -41,16 +42,16 @@ public class PetCreator {
             System.out.println(br.readLine()); // 5 - Qual a idade aproximada do pet?
             int age = sc.nextInt();
             if (age<20) {
-                pet.setPetAge(sc.nextInt());
+                pet.setPetAge(age);
             }
             else {
                 throw new InvalidAgeException("A idade deve ser menor que 20");
             }
 
             System.out.println(br.readLine()); // 6 - Qual o peso aproximado do pet?
-            float peso = sc.nextFloat();
-            if (peso<60 || peso>0.5) {
-                pet.setPetWeight(sc.nextFloat());
+            float weight = sc.nextFloat();
+            if (weight<60 || weight>0.5) {
+                pet.setPetWeight(weight);
             }
             else {
                 throw new InvalidWeightException("O peso deve ser maior que 0.5kg e menor que 60kg");
@@ -64,11 +65,11 @@ public class PetCreator {
 
 
         }
-        catch (IOException e) {
+        catch (IOException | InvalidAgeException | InvalidWeightException e) {
             e.printStackTrace();
         }
-        catch (InvalidWeightException e) {
-            e.printStackTrace();
-        }
+
+        return pet;
     }
+
 }
