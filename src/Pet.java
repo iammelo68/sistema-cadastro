@@ -76,4 +76,20 @@ public class Pet {
     public void setPetType(PetType petType) {
         this.petType = petType;
     }
+
+    @Override
+    public String toString() {
+        return "Pet {" +
+                "\n  Nome: " + petName +
+                "\n  Raça: " + petRace +
+                "\n  Idade: " + petAge + " anos" +
+                "\n  Peso: " + petWeight + " kg" +
+                "\n  Sexo: " + (petSex != null ? petSex.name() : "não informado") +
+                "\n  Tipo: " + (petType != null ? petType.name() : "não informado") +
+                "\n  Endereço: Rua " + addressStreet + ", Nº " + addressNumber + ", " + addressCity +
+                "\n}";
+    }
+
 }
+
+
