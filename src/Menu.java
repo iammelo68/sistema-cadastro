@@ -4,6 +4,8 @@ public class Menu {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int i = 0;
+        PetCreator creator = new PetCreator();
+        PetStoreKeeper store = new PetStoreKeeper();
         while (i!=6) {
             System.out.println("Insira a opção desejada: ");
             System.out.println("1. Cadastrar um novo pet");
@@ -15,7 +17,7 @@ public class Menu {
             i = sc.nextInt();
             switch (i) {
                 case 1:
-                    System.out.println("Cadastro");
+                    store.petStore(creator.petCreate());
                     break;
                 case 2:
                     System.out.println("Alterar os dados");

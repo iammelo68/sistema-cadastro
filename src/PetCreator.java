@@ -65,13 +65,11 @@ public class PetCreator {
 
 
         }
-        catch (IOException e) {
-            e.printStackTrace();
-        }
-        catch (InvalidWeightException e) {
+        catch (IOException | InvalidAgeException | InvalidWeightException e) {
             e.printStackTrace();
         }
 
         return pet;
     }
+
 }
